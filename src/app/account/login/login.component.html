@@ -1,0 +1,38 @@
+<section class="h-100 ima">
+	<div class="container-fluid h-100">
+		<div class="row justify-content-sm-center h-100">
+			<div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
+				<div class="card mt-5 shadow-lg">
+					<div class="card-body p-5">
+						<div class="text-center">
+							<h1 class="text-center display-6 fw-bold"> Login</h1>
+							<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate class="d-flex-center">
+								<div>
+                                    <div class="row">
+                                        <div class="col-3"></div>
+                                        <div class="col-6">
+                                            <label for="name">Name</label>
+                                            <input type="text" formControlName="name" class="form-control" id="name" placeholder="Name">
+                                        </div>
+                                        <div class="col-3"></div>
+                                        <div class="col-3"></div>
+                                        <div class="col-6">
+                                            <label for="role">Role</label>
+                                            <input type="text" formControlName="role" class="form-control" id="role" placeholder="Role">
+                                        </div>
+                                        <div class="col-3"></div>
+                                        <div class="col-3"></div>
+                                        <div class="col-6"></div>
+                                        <div class="col-3">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
