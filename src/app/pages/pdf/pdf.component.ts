@@ -24,4 +24,8 @@ export class PdfComponent implements OnInit {
       PDF.save('angular-demo.pdf');
     });
   }
+
+  onToggleSideNav(){
+    
+  }
 }
