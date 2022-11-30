@@ -13,6 +13,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { CouponsComponent } from './coupons/coupons.component';
 import { MediaComponent } from './media/media.component';
 import { SettingsComponent } from './settings/settings.component';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -32,7 +33,10 @@ import { SettingsComponent } from './settings/settings.component';
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    
   ]
 })
 export class PagesModule { }

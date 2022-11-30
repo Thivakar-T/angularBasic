@@ -1,1 +1,71 @@
-<p>products works!</p>
+<!-- <pre>
+{{form.value | json}}
+</pre> -->
+<div class="row py-3 d-flex justify-content-between">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-xl-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name *" [(ngModel)]="addObj.name" id="name"
+                            formControlName="name" required />
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-between">
+                <div class="col">
+                    <div class="text-end mb-0 float-end">
+                        <div><button type="button" class="btn btn-success btn-sm mt-3 mb-5" (click)="addItem()">
+                                Order Material
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body table-responsive" formArrayName="address">
+                    <table class="table table-striped" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th scope="col">S.No</th>
+                                <th scope="col">Street</th>
+                                <th scope="col">City </th>
+                                <th scope="col">Total </th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+                            <tr *ngFor="let vendorwise of vendorWiseList.controls; let i=index" [formGroupName]="i">
+                                <td>{{i+1}}</td>
+                                <td><input text="number" class="form-control" placeholder="Street" formControlName="street" />
+                                </td>
+                                <td><input text="number" class="form-control" placeholder="City" (change)="calculateTotal(vendorWiseList,i)" formControlName="city" />
+                                </td>
+                                <td><input text="number" class="form-control" placeholder="Total" formControlName="total" />
+                                </td>
+                                <td>
+                                    <!-- <mat-icon class="text-danger mt-1" (click)="delete(i)">delete</mat-icon> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th rowspan="2">Total Amount</th>
+                                <td><input text="number" class="form-control" placeholder="Total Amount"  formControlName="totalAmount" /></td>
+                            
+                              </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                {{amount}}
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">submit</button>
+        </div>
+    </form>
+    <div>
+        <button type="button" (click)="edit()" class="btn btn-primary">edit</button>
+    </div>
+</div>
